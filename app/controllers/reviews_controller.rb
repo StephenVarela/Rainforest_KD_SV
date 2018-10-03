@@ -10,12 +10,17 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @product = Product.find_by(id: params[:product_id].to_i)
+    @review = Review.find_by(id: params[:id].to_i)
   end
 
   def update
   end
 
   def destroy
+    @review = Review.find_by(product_id: params[:product_id])
+    @review.destroy
+    redirect_to product_url(@review.product)
   end
 
 end
