@@ -1,0 +1,8 @@
+<h1>Amazooon Home Page</h1>
+<h2><%= link_to("Create New", new_product_url) %></h2>
+<% @products.each do |product|%>
+  <div>
+    <h3> <%= link_to("#{product.name}", product_url(product)) %> | Only: <%= product.price_in_cents %></h3>
+    <p> Description: <%= product.description %><p>
+  </div>
+<%end %>
