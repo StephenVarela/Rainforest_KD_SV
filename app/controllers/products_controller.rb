@@ -4,7 +4,14 @@ class ProductsController < ApplicationController
   end
 
   def create
-    p params[:product]
+    @product = Product.new(name: params[:product][:name],
+                           description: params[:product][:description],
+                           price_in_cents: params[:product][:price_in_cents])
+    if @product.save
+      redirect_to product_url(@product)
+    else
+      render :new
+    end
   end
 
   def new
@@ -24,6 +31,8 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
     redirect_to products_url
   end
 end

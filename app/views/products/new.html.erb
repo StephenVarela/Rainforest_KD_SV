@@ -1,3 +1,10 @@
+<ul>
+<% @product.errors.full_messages.each do |error| %>
+  <li>
+    <%= "#{error}" %>
+  </li>
+<% end %>
+</ul>
 
 <%= form_for @product  do |f| %>
   <div class="">
