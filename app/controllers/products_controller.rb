@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-
+    @product = Product.find_by(id: params[:id].to_i)
   end
 
   def update
@@ -24,6 +24,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-
+    redirect_to products_url
   end
 end
