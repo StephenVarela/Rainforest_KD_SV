@@ -9,6 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
+    <h1><%= link_to("Amazooooon Home Page", products_url)  %></h1>
     <nav>
       <ul>
         <li><%= link_to("Home", products_url)%></li>
@@ -28,4 +29,9 @@
 
     <%= yield %>
   </body>
+
+  <footer>
+    Made by Kevin Diep & Stephen Varela with help from bitmaker labs ©
+  </footer>
+
 </html>

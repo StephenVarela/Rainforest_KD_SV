@@ -1,0 +1,41 @@
+nav {
+  text-align: right;
+}
+
+header{
+  background-color: #15253f;
+  color: silver;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+header h1 {
+  display: inline;
+  text-align: left;
+  grid-column: 1/2;
+  padding-left: 10px;
+}
+
+header a{
+  text-decoration: none;
+  color: white;
+}
+
+nav li {
+  list-style: none;
+  display: inline;
+  grid-column: 2/3;
+  font-size: 20px;
+}
+
+nav ul {
+  padding: 0;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+footer {
+  text-align: center;
+  background-color: #15253f;
+  color: white;
+}
