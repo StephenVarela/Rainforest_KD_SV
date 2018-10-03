@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-
+    p params[:product]
   end
 
   def new
