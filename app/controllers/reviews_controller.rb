@@ -15,6 +15,14 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @review = Review.find_by(id: params[:id])
+
+    @review.comment = params[:review][:comment]
+    if @review.save
+      redirect_to product_url(@review.product)
+    else
+      render :edit
+    end
   end
 
   def destroy
