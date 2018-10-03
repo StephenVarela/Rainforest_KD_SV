@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-
+    @product = Product.find_by(id: params[:id])
   end
 
   def show
@@ -27,7 +27,17 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @product = Product.find_by(id: params[:id].to_i)
 
+    @product.name = params[:product][:name]
+    @product.description = params[:product][:description]
+    @product.price_in_cents = params[:product][:price_in_cents]
+
+    if @product.save
+      redirect_to product_url(@product)
+    else
+      render :edit
+    end
   end
 
   def destroy

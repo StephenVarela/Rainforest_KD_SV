@@ -1,0 +1,14 @@
+<% if @product.errors.full_messages.size >= 1 %>
+  <h4>Could not edit product because:</h4>
+<% end %>
+
+<ul>
+<% @product.errors.full_messages.each do |error| %>
+  <li>
+    <%= "#{error}" %>
+  </li>
+<% end %>
+</ul>
+
+<h2><%= link_to("Back to #{@product.name} show", product_url(@product)) %></h2> 
+<%= render 'product_form', product: @product %>
