@@ -1,12 +1,12 @@
 <%= form_for product  do |f| %>
   <div class="">
-    <%= f.text_field :name %>
+    Name <%= f.text_field :name %>
   </div>
   <div class="">
-    <%= f.text_area :description, size: "60x12" %>
+    Description <%= f.text_area :description %>
   </div>
   <div class="">
-    <%= f.number_field :price_in_cents %>
+    Price <%= f.number_field :price_in_cents %>
   </div>
   <div class="">
     <%= f.submit %>
