@@ -6,3 +6,8 @@
 </div>
 
 <h3><%= link_to("Edit", edit_product_url) %></h3> |<h3><%= link_to("Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure you want to delete this picture?"}) %></h3>
+
+<% @product.reviews.each do |review| %>
+  <p>Written at: <%= review.updated_at %></p>
+  <p><%= review.comment %></p>
+<% end %>
